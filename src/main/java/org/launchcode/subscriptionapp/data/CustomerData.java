@@ -14,10 +14,6 @@ public class CustomerData {
         customers.put(customer.getId(), customer);
     }
 
-    public static Customer getById(int id) {
-        return customers.get(id);
-    }
-
     public static Collection<Customer> getAll() {
         return customers.values();
     }

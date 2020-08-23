@@ -11,6 +11,8 @@ public class Customer {
     public Customer(String name, String streetAddress) {
         this.name = name;
         this.streetAddress = streetAddress;
+        this.id = nextId;
+        nextId++;
     }
 
     public int getId() {

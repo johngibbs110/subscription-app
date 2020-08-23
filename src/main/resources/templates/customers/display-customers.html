@@ -10,10 +10,11 @@
 
 <nav th:replace="fragments :: navigation"></nav>
 
-<ul th:each="customer : ${customers}">
+<th:block th:each="customer : ${customers}">
       <li th:text="${customer.name}"></li>
       <li th:text="${customer.streetAddress}"></li>
-</ul>
+      <li th:text="${customer.id}"></li>
+</th:block>
 
 </body>
 </html>
