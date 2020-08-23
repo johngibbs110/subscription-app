@@ -2,13 +2,18 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head>
    <meta charset="UTF-8"/>
-   <title>Homepage</title>
+   <title></title>
 </head>
 <body>
 
-<h1>Hello, Bookstore!</h1>
+<h1>Customers</h1>
 
 <nav th:replace="fragments :: navigation"></nav>
+
+<ul th:each="customer : ${customers}">
+      <li th:text="${customer.name}"></li>
+      <li th:text="${customer.streetAddress}"></li>
+</ul>
 
 </body>
 </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+   <meta charset="UTF-8"/>
+   <title>Add Customer</title>
+</head>
+<body>
+
+<h1>Add Customer</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<form method="post" action="add-customer">
+   <label>Name
+      <input type="text" name="name">
+   </label>
+   <label>Street Address
+      <input type="text" name="streetAddress">
+   </label>
+   <input type="submit" value="Add Customer">
+</form>
+
+</body>
+</html>
