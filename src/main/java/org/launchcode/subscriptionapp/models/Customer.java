@@ -5,11 +5,13 @@ public class Customer {
     private int id;
     private static int nextId = 1;
 
-    private String name;
+    private String firstName;
+    private String lastName;
     private String streetAddress;
 
-    public Customer(String name, String streetAddress) {
-        this.name = name;
+    public Customer(String firstName, String lastName, String streetAddress) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.streetAddress = streetAddress;
         this.id = nextId;
         nextId++;
@@ -19,12 +21,20 @@ public class Customer {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getStreetAddress() {
@@ -37,7 +47,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return name;
+        return lastName;
     }
 
 }
