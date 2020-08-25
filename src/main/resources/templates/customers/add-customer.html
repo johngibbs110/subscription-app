@@ -11,16 +11,41 @@
 
 <form method="post" action="add-customer">
    <div class="form-group">
-      <label for="firstName">Name:</label>
+      <label for="firstName">First Name:</label>
       <input type="text" name="firstName" class="form-control" placeholder="Enter first name" id="firstName">
    </div>
    <div class="form-group">
-      <label for="lastName">Name:</label>
+      <label for="lastName">Last Name:</label>
       <input type="text" name="lastName" class="form-control" placeholder="Enter last name" id="lastName">
    </div>
    <div class="form-group">
       <label for="street-address">Street Address:</label>
       <input type="text" name="streetAddress" class="form-control" placeholder="Enter address" id="street-address">
+   </div>
+   <div class="form-group">
+      <label for="city">City:</label>
+      <input type="text" name="city" class="form-control" placeholder="Enter city" id="city">
+   </div>
+   <div class="form-group">
+      <label for="state">State:</label>
+      <input type="text" name="state" class="form-control" placeholder="Enter state" id="state">
+   </div>
+   <div class="form-group">
+      <label for="zip">Zip Code:</label>
+      <input type="text" name="zip" class="form-control" placeholder="Enter zip code" id="zip">
+   </div>
+   <div class="form-group">
+      <label for="email">Email Address:</label>
+      <input type="email" name="email" class="form-control" placeholder="Enter email address" id="email">
+   </div>
+   <div class="form-group">
+      <p>Subscription Length:</p>
+      <input type="radio" id="three-month" name="subscriptionLength" value="3">
+      <label for="three-month">3</label><br>
+      <input type="radio" id="six-month" name="subscriptionLength" value="6">
+      <label for="six-month">6</label><br>
+      <input type="radio" id="twelve-month" name="subscriptionLength" value="12">
+      <label for="twelve-month">12</label><br>
    </div>
    <div class="form-group">
       <input type="submit" value="Add Customer" class="btn btn-success">

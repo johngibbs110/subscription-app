@@ -8,11 +8,21 @@ public class Customer {
     private String firstName;
     private String lastName;
     private String streetAddress;
+    private String city;
+    private String state;
+    private int zip;
+    private String email;
+    private Integer subscriptionLength;
 
-    public Customer(String firstName, String lastName, String streetAddress) {
+    public Customer(String firstName, String lastName, String streetAddress, String city, String state, int zip, String email, Integer subscriptionLength) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.streetAddress = streetAddress;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+        this.email = email;
+        this.subscriptionLength = subscriptionLength;
         this.id = nextId;
         nextId++;
     }
@@ -43,6 +53,46 @@ public class Customer {
 
     public void setStreetAddress(String streetAddress) {
         this.streetAddress = streetAddress;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public int getZip() {
+        return zip;
+    }
+
+    public void setZip(int zip) {
+        this.zip = zip;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Integer getSubscriptionLength() {
+        return subscriptionLength;
+    }
+
+    public void setSubscriptionLength(Integer subscriptionLength) {
+        this.subscriptionLength = subscriptionLength;
     }
 
     @Override

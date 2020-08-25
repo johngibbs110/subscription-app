@@ -15,6 +15,11 @@
             <th>Last Name</th>
             <th>First Name</th>
             <th>Street Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Email</th>
+            <th>Length</th>
             <th>ID</th>
         </tr>
     </thead>
@@ -22,6 +27,11 @@
         <td th:text="${customer.lastName}"></td>
         <td th:text="${customer.firstName}"></td>
         <td th:text="${customer.streetAddress}"></td>
+        <td th:text="${customer.city}"></td>
+        <td th:text="${customer.state}"></td>
+        <td th:text="${customer.zip}"></td>
+        <td th:text="${customer.email}"></td>
+        <td th:text="${customer.subscriptionLength}"></td>
         <td th:text="${customer.id}"></td>
     </tr>
 </table>
