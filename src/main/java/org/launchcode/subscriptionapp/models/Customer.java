@@ -12,9 +12,10 @@ public class Customer {
     private String state;
     private int zip;
     private String email;
+    private String phone;
     private Integer subscriptionLength;
 
-    public Customer(String firstName, String lastName, String streetAddress, String city, String state, int zip, String email, Integer subscriptionLength) {
+    public Customer(String firstName, String lastName, String streetAddress, String city, String state, int zip, String email, String phone, Integer subscriptionLength) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.streetAddress = streetAddress;
@@ -22,6 +23,7 @@ public class Customer {
         this.state = state;
         this.zip = zip;
         this.email = email;
+        this.phone = phone;
         this.subscriptionLength = subscriptionLength;
         this.id = nextId;
         nextId++;
@@ -85,6 +87,14 @@ public class Customer {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public Integer getSubscriptionLength() {
