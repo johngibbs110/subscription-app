@@ -1,11 +1,15 @@
 package org.launchcode.subscriptionapp.models;
 
+import javax.validation.constraints.NotBlank;
+
 public class Customer {
 
     private int id;
     private static int nextId = 1;
 
+    @NotBlank
     private String firstName;
+
     private String lastName;
     private String streetAddress;
     private String city;

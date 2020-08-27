@@ -4,9 +4,12 @@ import org.launchcode.subscriptionapp.data.CustomerData;
 import org.launchcode.subscriptionapp.models.Customer;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import javax.validation.Valid;
 
 @Controller
 public class CustomerController {
@@ -23,7 +26,11 @@ public class CustomerController {
     }
 
     @PostMapping("add-customer")
-    public String createCustomer(@ModelAttribute Customer newCustomer) {
+    public String createCustomer(@ModelAttribute @Valid Customer newCustomer, Errors errors, Model model) {
+        if (errors.hasErrors()) {
+            model.addAttribute("errorMessage", "Invalid Data!");
+            return "customers/add-customer";
+        }
         CustomerData.addCustomer(newCustomer);
         return "redirect:/display-customers";
     }
