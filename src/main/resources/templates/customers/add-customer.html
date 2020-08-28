@@ -12,7 +12,8 @@
 <form method="post" action="add-customer">
    <div class="form-group">
       <label for="firstName">First Name:</label>
-      <input type="text" name="firstName" class="form-control" placeholder="Enter first name" id="firstName">
+      <input th:field="${customer.firstName}" class="form-control" placeholder="Enter first name" id="firstName">
+      <p class="error" th:errors="${customer.firstName}"></p>
    </div>
    <div class="form-group">
       <label for="lastName">Last Name:</label>

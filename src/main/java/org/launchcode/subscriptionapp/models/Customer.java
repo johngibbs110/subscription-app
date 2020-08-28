@@ -7,7 +7,7 @@ public class Customer {
     private int id;
     private static int nextId = 1;
 
-    @NotBlank
+    @NotBlank(message = "Please enter customer''s first name.")
     private String firstName;
 
     private String lastName;
@@ -32,6 +32,8 @@ public class Customer {
         this.id = nextId;
         nextId++;
     }
+
+    public Customer () {}
 
     public int getId() {
         return id;

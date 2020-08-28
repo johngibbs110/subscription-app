@@ -24,6 +24,7 @@ public class CustomerController {
     @GetMapping("add-customer")
     public String displayAddCustomerForm(Model model) {
         model.addAttribute("title", "Add Customer");
+        model.addAttribute(new Customer());
         return "customers/add-customer";
     }
 
@@ -31,7 +32,6 @@ public class CustomerController {
     public String createCustomer(@ModelAttribute @Valid Customer newCustomer, Errors errors, Model model) {
         if (errors.hasErrors()) {
             model.addAttribute("title", "Add Customer");
-            model.addAttribute("errorMessage", "Invalid Data!");
             return "customers/add-customer";
         }
         CustomerData.addCustomer(newCustomer);
