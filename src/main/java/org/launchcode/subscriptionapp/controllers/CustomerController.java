@@ -17,17 +17,20 @@ public class CustomerController {
     @GetMapping("display-customers")
     public String displayCustomers(Model model) {
         model.addAttribute("customers", CustomerData.getAll());
+        model.addAttribute("title", "Customers");
         return "customers/display-customers";
     }
 
     @GetMapping("add-customer")
     public String displayAddCustomerForm(Model model) {
+        model.addAttribute("title", "Add Customer");
         return "customers/add-customer";
     }
 
     @PostMapping("add-customer")
     public String createCustomer(@ModelAttribute @Valid Customer newCustomer, Errors errors, Model model) {
         if (errors.hasErrors()) {
+            model.addAttribute("title", "Add Customer");
             model.addAttribute("errorMessage", "Invalid Data!");
             return "customers/add-customer";
         }
