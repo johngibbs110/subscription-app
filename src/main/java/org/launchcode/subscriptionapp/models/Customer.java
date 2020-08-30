@@ -1,5 +1,7 @@
 package org.launchcode.subscriptionapp.models;
 
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -21,9 +23,11 @@ public class Customer {
     private String city;
 
     private String state;
+
     private int zip;
 
     @NotBlank(message = "Please enter email address.")
+    @Email
     private String email;
 
     @NotBlank(message = "Please enter phone number.")
