@@ -1,22 +1,34 @@
 package org.launchcode.subscriptionapp.models;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 public class Customer {
 
     private int id;
     private static int nextId = 1;
 
-    @NotBlank(message = "Please enter customer''s first name.")
+    @NotBlank(message = "Please enter first name.")
     private String firstName;
 
+    @NotBlank(message = "Please enter last name.")
     private String lastName;
+
+    @NotBlank(message = "Please enter street address.")
     private String streetAddress;
+
+    @NotBlank(message = "Please enter city.")
     private String city;
+
     private String state;
     private int zip;
+
+    @NotBlank(message = "Please enter email address.")
     private String email;
+
+    @NotBlank(message = "Please enter phone number.")
     private String phone;
+
     private Integer subscriptionLength;
 
     public Customer(String firstName, String lastName, String streetAddress, String city, String state, int zip, String email, String phone, Integer subscriptionLength) {
