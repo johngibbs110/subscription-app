@@ -21,11 +21,9 @@ public class Customer {
     private String city;
 
     private String state;
-
     private int zip;
 
     @NotBlank(message = "Please enter email address.")
-    @Email
     private String email;
 
     @NotBlank(message = "Please enter phone number.")
@@ -34,6 +32,7 @@ public class Customer {
     private Integer subscriptionLength;
 
     public Customer(String firstName, String lastName, String streetAddress, String city, String state, int zip, String email, String phone, Integer subscriptionLength) {
+        this();
         this.firstName = firstName;
         this.lastName = lastName;
         this.streetAddress = streetAddress;
@@ -43,11 +42,12 @@ public class Customer {
         this.email = email;
         this.phone = phone;
         this.subscriptionLength = subscriptionLength;
+    }
+
+    public Customer () {
         this.id = nextId;
         nextId++;
     }
-
-    public Customer () {}
 
     public int getId() {
         return id;

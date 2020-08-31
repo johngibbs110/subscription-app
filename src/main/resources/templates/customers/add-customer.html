@@ -10,22 +10,22 @@
 <form method="post" action="add-customer">
    <div class="form-group col-md-6">
       <label for="firstName">First Name:</label>
-      <input th:field="${customer.firstName}" class="form-control" placeholder="Enter first name" id="firstName">
+      <input type="text" th:field="${customer.firstName}" class="form-control" placeholder="Enter first name" id="firstName">
       <p class="error" th:errors="${customer.firstName}"></p>
    </div>
    <div class="form-group col-md-6">
       <label for="lastName">Last Name:</label>
-      <input th:field="${customer.lastName}" class="form-control" placeholder="Enter last name" id="lastName">
+      <input type="text" th:field="${customer.lastName}" class="form-control" placeholder="Enter last name" id="lastName">
       <p class="error" th:errors="${customer.lastName}"></p>
    </div>
    <div class="form-group col-md-12">
       <label for="street-address">Street Address:</label>
-      <input th:field="${customer.streetAddress}" class="form-control" placeholder="Enter address" id="street-address">
+      <input type="text" th:field="${customer.streetAddress}" class="form-control" placeholder="Enter address" id="street-address">
       <p class="error" th:errors="${customer.streetAddress}"></p>
    </div>
    <div class="form-group col-md-6">
       <label for="city">City:</label>
-      <input th:field="${customer.city}" class="form-control" placeholder="Enter city" id="city">
+      <input type="text" th:field="${customer.city}" class="form-control" placeholder="Enter city" id="city">
       <p class="error" th:errors="${customer.city}"></p>
    </div>
    <div class="form-group col-md-3">
@@ -91,12 +91,12 @@
    </div>
    <div class="form-group col-md-12">
       <label for="email">Email Address:</label>
-      <input th:field="${customer.email}" class="form-control" placeholder="Enter email address" id="email">
+      <input type="email" th:field="${customer.email}" class="form-control" placeholder="Enter email address" id="email">
       <p class="error" th:errors="${customer.email}"></p>
    </div>
    <div class="form-group col-md-6">
       <label for="phone">Phone Number:</label>
-      <input th:field="${customer.phone}" class="form-control" placeholder="(XXX-XXX-XXXX)" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value="">
+      <input type="text" th:field="${customer.phone}" class="form-control" placeholder="(XXX-XXX-XXXX)" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value="">
       <p class="error" th:errors="${customer.phone}"></p>
    </div>
    <div class="form-group col-md-6">
