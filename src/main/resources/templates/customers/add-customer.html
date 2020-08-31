@@ -7,30 +7,28 @@
 
 <nav th:replace="fragments :: navigation"></nav>
 
-<p th:text="${errorMessage}" style="color:red;"></p>
-
 <form method="post" action="add-customer">
-   <div class="form-group">
+   <div class="form-group col-md-6">
       <label for="firstName">First Name:</label>
       <input th:field="${customer.firstName}" class="form-control" placeholder="Enter first name" id="firstName">
       <p class="error" th:errors="${customer.firstName}"></p>
    </div>
-   <div class="form-group">
+   <div class="form-group col-md-6">
       <label for="lastName">Last Name:</label>
       <input th:field="${customer.lastName}" class="form-control" placeholder="Enter last name" id="lastName">
       <p class="error" th:errors="${customer.lastName}"></p>
    </div>
-   <div class="form-group">
+   <div class="form-group col-md-12">
       <label for="street-address">Street Address:</label>
       <input th:field="${customer.streetAddress}" class="form-control" placeholder="Enter address" id="street-address">
       <p class="error" th:errors="${customer.streetAddress}"></p>
    </div>
-   <div class="form-group">
+   <div class="form-group col-md-6">
       <label for="city">City:</label>
       <input th:field="${customer.city}" class="form-control" placeholder="Enter city" id="city">
       <p class="error" th:errors="${customer.city}"></p>
    </div>
-   <div class="form-group">
+   <div class="form-group col-md-3">
       <label for="state">State:</label>
       <select name="state" id="state" class="form-control" required>
          <option value="">Select</option>
@@ -87,22 +85,22 @@
          <option value="WY">Wyoming</option>
       </select>
    </div>
-   <div class="form-group">
+   <div class="form-group col-md-3">
       <label for="zip">Zip Code:</label>
       <input type="text" name="zip" class="form-control" placeholder="Enter zip code" id="zip">
    </div>
-   <div class="form-group">
+   <div class="form-group col-md-12">
       <label for="email">Email Address:</label>
       <input th:field="${customer.email}" class="form-control" placeholder="Enter email address" id="email">
       <p class="error" th:errors="${customer.email}"></p>
    </div>
-   <div class="form-group">
+   <div class="form-group col-md-6">
       <label for="phone">Phone Number:</label>
       <input th:field="${customer.phone}" class="form-control" placeholder="(XXX-XXX-XXXX)" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value="">
       <p class="error" th:errors="${customer.phone}"></p>
    </div>
-   <div class="form-group">
-      <p>Subscription Length:</p>
+   <div class="form-group col-md-6">
+      <label>Subscription Length:</label><br>
       <input type="radio" id="three-month" name="subscriptionLength" value="3" required>
       <label for="three-month">3</label><br>
       <input type="radio" id="six-month" name="subscriptionLength" value="6" required>
