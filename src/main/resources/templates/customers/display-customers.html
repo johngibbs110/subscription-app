@@ -36,5 +36,16 @@
     </tr>
 </table>
 
+<div class="card" th:each="customer : ${customers}">
+    <div class="card-body">
+    <h4 th:text="${customer.firstName} + ' ' + ${customer.lastName}"></h4>
+        <p th:text="${customer.streetAddress}"></p>
+        <p th:text="${customer.city} + ', ' + ${customer.state} + ' ' + ${customer.zip}"></p>
+        <p th:text="${customer.email}"></p>
+        <p th:text="${customer.phone}"></p>
+        <p th:text="${customer.subscriptionLength} + ' Month Subscription'"></p>
+    </div>
+</div>
+
 </body>
 </html>
