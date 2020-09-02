@@ -1,7 +1,9 @@
 package org.launchcode.subscriptionapp.controllers;
 
 import org.launchcode.subscriptionapp.data.CustomerData;
+import org.launchcode.subscriptionapp.data.CustomerRepository;
 import org.launchcode.subscriptionapp.models.Customer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -14,10 +16,13 @@ import javax.validation.Valid;
 @Controller
 public class CustomerController {
 
+    @Autowired
+    private CustomerRepository customerRepository;
+
     @GetMapping("display-customers")
     public String displayCustomers(Model model) {
-        model.addAttribute("customers", CustomerData.getAll());
         model.addAttribute("title", "Customers");
+        model.addAttribute("customers", customerRepository.findAll());
         return "customers/display-customers";
     }
 
@@ -34,7 +39,7 @@ public class CustomerController {
             model.addAttribute("title", "Add Customer");
             return "customers/add-customer";
         }
-        CustomerData.addCustomer(newCustomer);
+        customerRepository.save(newCustomer);
         return "redirect:/display-customers";
     }
 
