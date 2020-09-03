@@ -43,4 +43,10 @@ public class CustomerController {
         return "redirect:/display-customers";
     }
 
+    @GetMapping("edit-customer")
+    public String editCustomer(Model model) {
+        model.addAttribute("title", "Edit Customer");
+        return "customers/edit-customer";
+    }
+
 }
