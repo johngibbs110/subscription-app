@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.websocket.server.PathParam;
+import java.util.Optional;
 
 @Controller
 public class CustomerController {
@@ -43,9 +43,11 @@ public class CustomerController {
         return "redirect:/display-customers";
     }
 
-    @GetMapping("edit-customer")
-    public String editCustomer(Model model) {
+    @GetMapping("edit-customer/{id}")
+    public String editCustomer(@PathVariable("id") int id, Model model) {
+        Optional<Customer> customer = customerRepository.findById(id);
         model.addAttribute("title", "Edit Customer");
+        model.addAttribute("customer", customer);
         return "customers/edit-customer";
     }
 
