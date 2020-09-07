@@ -32,7 +32,7 @@
    </div>
    <div class="form-group col-md-3">
       <label for="state">State:</label>
-      <select name="state" id="state" class="form-control" required>
+      <select th:field="*{state}" id="state" class="form-control" required>
          <option value="">Select</option>
          <option value="AL">Alabama</option>
          <option value="AK">Alaska</option>
@@ -89,7 +89,7 @@
    </div>
    <div class="form-group col-md-3">
       <label for="zip">Zip Code:</label>
-      <input type="text" name="zip" class="form-control" placeholder="Enter zip code" id="zip">
+      <input type="text" th:field="*{zip}" class="form-control" placeholder="Enter zip code" id="zip">
    </div>
    <div class="form-group col-md-12">
       <label for="email">Email Address:</label>
@@ -103,11 +103,11 @@
    </div>
    <div class="form-group col-md-6">
       <label>Subscription Length:</label><br>
-      <input type="radio" id="three-month" name="subscriptionLength" value="3" required>
+      <input type="radio" id="three-month" th:field="*{subscriptionLength}" value="3" required>
       <label for="three-month">3</label><br>
-      <input type="radio" id="six-month" name="subscriptionLength" value="6" required>
+      <input type="radio" id="six-month" th:field="*{subscriptionLength}" value="6" required>
       <label for="six-month">6</label><br>
-      <input type="radio" id="twelve-month" name="subscriptionLength" value="12" required>
+      <input type="radio" id="twelve-month" th:field="*{subscriptionLength}" value="12" required>
       <label for="twelve-month">12</label><br>
    </div>
    <div class="form-group">
