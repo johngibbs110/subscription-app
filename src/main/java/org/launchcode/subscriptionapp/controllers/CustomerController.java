@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.Optional;
@@ -45,11 +42,22 @@ public class CustomerController {
     }
 
     @GetMapping("edit-customer/{id}")
-    public String editCustomer(@PathVariable("id") int id, Model model) {
+    public String displayEditCustomerForm(@PathVariable("id") int id, Model model) {
         Optional<Customer> customer = customerRepository.findById(id);
         model.addAttribute("title", "Edit Customer");
         model.addAttribute("customer", customer);
         return "customers/edit-customer";
+    }
+
+    @RequestMapping(value = "edit-customer/{id}", method = RequestMethod.POST)
+    public String updateExistingCustomer(@PathVariable("id") int id, @ModelAttribute @Valid Customer newCustomer, Errors errors, Model model) {
+        if (errors.hasErrors()) {
+            model.addAttribute("title", "Edit Customer");
+            return "customers/edit-customer";
+        }
+        Optional<Customer> existingCustomer = customerRepository.findById(id);
+        customerRepository.save(existingCustomer.get());
+        return "redirect:/display-customers";
     }
 
 }
