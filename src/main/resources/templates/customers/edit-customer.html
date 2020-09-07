@@ -9,7 +9,7 @@
 
 <h1>Edit Customer</h1>
 
-<form method="post" th:action="@{/edit-customer/{id}(id=${customer.id})}" th:object="${customer}">
+<form method="post" th:action="@{/edit-customer}" th:object="${customer}">
    <div class="form-group col-md-6">
       <label for="firstName">First Name:</label>
       <input type="text" th:field="*{firstName}" class="form-control" placeholder="Enter first name" id="firstName">
