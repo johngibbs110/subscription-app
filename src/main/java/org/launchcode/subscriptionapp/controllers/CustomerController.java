@@ -43,7 +43,7 @@ public class CustomerController {
 
     @GetMapping("edit-customer/{id}")
     public String displayEditCustomerForm(@PathVariable("id") int id, Model model) {
-        Optional<Customer> customer = customerRepository.findById(id);
+        Customer customer = customerRepository.findById(id).get();
         model.addAttribute("title", "Edit Customer");
         model.addAttribute("customer", customer);
         return "customers/edit-customer";
@@ -55,8 +55,7 @@ public class CustomerController {
             model.addAttribute("title", "Edit Customer");
             return "customers/edit-customer";
         }
-        Optional<Customer> existingCustomer = customerRepository.findById(id);
-        customerRepository.save(existingCustomer.get());
+        customerRepository.save(newCustomer);
         return "redirect:/display-customers";
     }
 
