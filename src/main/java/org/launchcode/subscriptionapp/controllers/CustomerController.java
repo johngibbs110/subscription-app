@@ -59,4 +59,11 @@ public class CustomerController {
         return "redirect:/display-customers";
     }
 
+    @GetMapping("delete-customer/{id}")
+    public String processDeleteCustomer(@PathVariable("id") int id) {
+        Customer customer = customerRepository.findById(id).get();
+        customerRepository.delete(customer);
+        return "redirect:/display-customers";
+    }
+
 }
