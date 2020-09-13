@@ -7,34 +7,7 @@
 
 <nav th:replace="fragments :: navigation"></nav>
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Last Name</th>
-            <th>First Name</th>
-            <th>Street Address</th>
-            <th>City</th>
-            <th>State</th>
-            <th>Zip</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Length</th>
-            <th>ID</th>
-        </tr>
-    </thead>
-    <tr th:each="customer : ${customers}">
-        <td th:text="${customer.lastName}"></td>
-        <td th:text="${customer.firstName}"></td>
-        <td th:text="${customer.streetAddress}"></td>
-        <td th:text="${customer.city}"></td>
-        <td th:text="${customer.state}"></td>
-        <td th:text="${customer.zip}"></td>
-        <td th:text="${customer.email}"></td>
-        <td th:text="${customer.phone}"></td>
-        <td th:text="${customer.subscriptionLength}"></td>
-        <td th:text="${customer.id}"></td>
-    </tr>
-</table>
+<br>
 
 <div class="card" th:each="customer : ${customers}">
     <div class="card-body">
