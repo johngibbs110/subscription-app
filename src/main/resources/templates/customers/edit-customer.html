@@ -7,6 +7,8 @@
 
 <nav th:replace="fragments :: navigation"></nav>
 
+<br>
+
 <form method="post" th:action="@{/edit-customer/{id}(id=${id})}" th:object="${customer}">
 
    <input type="hidden" th:field="*{id}" th:value="${id}">
