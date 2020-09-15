@@ -10,3 +10,16 @@
 <br>
 
 <p>This is where the form will be to search customers by last name.</p>
+
+<form th:action="@{/search-customers}">
+    <div class="form-group">
+        <label for="searchLastName">Last Name:
+            <input type="text" name="searchLastName" id="searchLastName">
+        </label>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Search Customers" class="btn btn-secondary">
+    </div>
+
+</form>
