@@ -16,6 +16,12 @@ public class CustomerController {
     @Autowired
     private CustomerRepository customerRepository;
 
+    @GetMapping("search-customers")
+    public String searchCustomers(Model model) {
+        model.addAttribute("title", "Search Customers");
+        return "customers/search-customers";
+    }
+
     @GetMapping("display-customers")
     public String displayCustomers(Model model) {
         model.addAttribute("title", "Customers");
