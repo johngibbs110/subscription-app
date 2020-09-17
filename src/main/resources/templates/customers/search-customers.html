@@ -11,7 +11,8 @@
 
 <p>This is where the form will be to search customers by last name.</p>
 
-<form th:action="@{/search-customers}">
+<form method="post" th:action="@{/search-customers}" th:object="${customer}">
+
     <div class="form-group">
         <label for="searchLastName">Last Name:
             <input type="text" name="searchLastName" id="searchLastName">
@@ -20,6 +21,23 @@
 
     <div class="form-group">
         <input type="submit" value="Search Customers" class="btn btn-secondary">
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4" th:each="customer : ${customers}">
+            <div class="card">
+                <div class="card-body">
+                    <h4 th:text="${customer.firstName} + ' ' + ${customer.lastName}"></h4>
+                    <p th:text="${customer.streetAddress}"></p>
+                    <p th:text="${customer.city} + ', ' + ${customer.state} + ' ' + ${customer.zip}"></p>
+                    <p th:text="${customer.email}"></p>
+                    <p th:text="${customer.phone}"></p>
+                    <p th:text="${customer.subscriptionLength} + ' Month Subscription'"></p>
+                    <a th:href="@{/edit-customer/{id}(id=${customer.id})}" class="btn btn-warning">Edit Customer</a>
+                    <a th:href="@{/delete-customer/{id}(id=${customer.id})}" class="btn btn-danger">Delete Customer</a>
+                </div>
+            </div><br>
+        </div>
     </div>
 
 </form>

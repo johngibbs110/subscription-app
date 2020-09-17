@@ -9,6 +9,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 public class CustomerController {
@@ -19,6 +20,14 @@ public class CustomerController {
     @GetMapping("search-customers")
     public String searchCustomers(Model model) {
         model.addAttribute("title", "Search Customers");
+        return "customers/search-customers";
+    }
+
+    @RequestMapping(value = "search-customers", method = RequestMethod.POST)
+    public String displaySearchResults(Model model, @RequestParam String searchLastName) {
+        List<Customer> customers = customerRepository.findByLastName(searchLastName);
+        model.addAttribute("title", "Search Customers");
+        model.addAttribute("customers", customers);
         return "customers/search-customers";
     }
 
