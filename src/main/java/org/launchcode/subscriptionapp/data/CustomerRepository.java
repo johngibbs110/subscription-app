@@ -11,5 +11,6 @@ import java.util.List;
 public interface CustomerRepository extends CrudRepository<Customer, Integer> {
 
     List<Customer> findByLastName (@Param("lastName") String lastName);
+    List<Customer> findByEmail (@Param("email") String email);
 
 }

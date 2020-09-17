@@ -19,16 +19,21 @@ public class SearchController {
     private CustomerRepository customerRepository;
 
     @GetMapping("search-customers")
-    public String searchCustomers(Model model) {
+    public String searchCustomers (Model model) {
         model.addAttribute("title", "Search Customers");
         return "customers/search-customers";
     }
 
     @RequestMapping(value = "search-customers", method = RequestMethod.POST)
-    public String displaySearchResults(Model model, @RequestParam String searchLastName) {
-        List<Customer> customers = customerRepository.findByLastName(searchLastName);
+    public String displaySearchLastName (Model model, @RequestParam String searchType, @RequestParam String searchTerm) {
+        if (searchType.equals("Email")) {
+            List<Customer> emailCustomers = customerRepository.findByEmail(searchTerm);
+            model.addAttribute("customers", emailCustomers);
+        } else if (searchType.equals("Last Name")) {
+            List<Customer> lastNameCustomers = customerRepository.findByLastName(searchTerm);
+            model.addAttribute("customers", lastNameCustomers);
+        }
         model.addAttribute("title", "Search Customers");
-        model.addAttribute("customers", customers);
         return "customers/search-customers";
     }
 
