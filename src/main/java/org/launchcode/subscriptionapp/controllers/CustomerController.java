@@ -17,20 +17,6 @@ public class CustomerController {
     @Autowired
     private CustomerRepository customerRepository;
 
-    @GetMapping("search-customers")
-    public String searchCustomers(Model model) {
-        model.addAttribute("title", "Search Customers");
-        return "customers/search-customers";
-    }
-
-    @RequestMapping(value = "search-customers", method = RequestMethod.POST)
-    public String displaySearchResults(Model model, @RequestParam String searchLastName) {
-        List<Customer> customers = customerRepository.findByLastName(searchLastName);
-        model.addAttribute("title", "Search Customers");
-        model.addAttribute("customers", customers);
-        return "customers/search-customers";
-    }
-
     @GetMapping("display-customers")
     public String displayCustomers(Model model) {
         model.addAttribute("title", "Customers");
