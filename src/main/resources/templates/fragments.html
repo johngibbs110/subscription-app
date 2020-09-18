@@ -45,9 +45,13 @@
 
    <div class="form-group form-row">
       <div class="col">
-         <label for="street-address">Street Address:</label>
+         <label for="street-address">Street Address Line 1:</label>
          <input type="text" th:field="*{streetAddress}" class="form-control" placeholder="Enter address" id="street-address">
          <p class="error" th:errors="${customer.streetAddress}"></p>
+      </div>
+      <div class="col">
+         <label for="street-address-two">Street Address Line 2:</label>
+         <input type="text" th:field="*{streetAddressTwo}" class="form-control" placeholder="Enter address" id="street-address-two">
       </div>
    </div>
 
@@ -157,7 +161,8 @@
             </div>
                <div class="card-body">
                   <div class="d-flex justify-content-between">
-                     <div th:text="${customer.streetAddress}"></div>
+                     <div th:if="${customer.streetAddressTwo != null}" th:text="${customer.streetAddress} + ', ' + ${customer.streetAddressTwo}"></div>
+                     <div th:unless="${customer.streetAddressTwo != null}" th:text="${customer.streetAddress}"></div>
                      <div class="text-right" th:text="${customer.email}"></div>
                   </div>
                   <div class="d-flex justify-content-between">

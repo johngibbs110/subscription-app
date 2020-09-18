@@ -22,6 +22,8 @@ public class Customer {
     @NotBlank(message = "Please enter street address.")
     private String streetAddress;
 
+    private String streetAddressTwo;
+
     @NotBlank(message = "Please enter city.")
     private String city;
 
@@ -38,10 +40,11 @@ public class Customer {
 
     private Integer subscriptionLength;
 
-    public Customer(String firstName, String lastName, String streetAddress, String city, String state, int zip, String email, String phone, Integer subscriptionLength) {
+    public Customer(String firstName, String lastName, String streetAddress, String streetAddressTwo, String city, String state, int zip, String email, String phone, Integer subscriptionLength) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.streetAddress = streetAddress;
+        this.streetAddressTwo = streetAddressTwo;
         this.city = city;
         this.state = state;
         this.zip = zip;
@@ -82,6 +85,14 @@ public class Customer {
 
     public void setStreetAddress(String streetAddress) {
         this.streetAddress = streetAddress;
+    }
+
+    public String getStreetAddressTwo() {
+        return streetAddressTwo;
+    }
+
+    public void setStreetAddressTwo(String streetAddressTwo) {
+        this.streetAddressTwo = streetAddressTwo;
     }
 
     public String getCity() {
