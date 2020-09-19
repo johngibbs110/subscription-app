@@ -121,6 +121,7 @@
       <div class="col">
          <label for="zip">Zip Code:</label>
          <input type="text" th:field="*{zip}" class="form-control" placeholder="Enter zip code" id="zip">
+         <p class="error" th:errors="${customer.zip}"></p>
       </div>
    </div>
 

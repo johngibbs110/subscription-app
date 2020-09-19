@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Customer {
@@ -29,7 +31,9 @@ public class Customer {
 
     private String state;
 
-    private int zip;
+    @NotBlank(message = "Please enter zip code.")
+    @Size(min = 5, max = 5, message = "Please enter a valid zip code")
+    private String zip;
 
     @NotBlank(message = "Please enter email address.")
     @Email
@@ -40,7 +44,7 @@ public class Customer {
 
     private Integer subscriptionLength;
 
-    public Customer(String firstName, String lastName, String streetAddress, String streetAddressTwo, String city, String state, int zip, String email, String phone, Integer subscriptionLength) {
+    public Customer(String firstName, String lastName, String streetAddress, String streetAddressTwo, String city, String state, String zip, String email, String phone, Integer subscriptionLength) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.streetAddress = streetAddress;
@@ -111,11 +115,11 @@ public class Customer {
         this.state = state;
     }
 
-    public int getZip() {
+    public String getZip() {
         return zip;
     }
 
-    public void setZip(int zip) {
+    public void setZip(String zip) {
         this.zip = zip;
     }
 
