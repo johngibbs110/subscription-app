@@ -55,6 +55,11 @@ public class CustomerController {
             model.addAttribute("title", "Edit Customer");
             return "customers/edit-customer";
         }
+        if (newCustomer.getStreetAddressTwo() == "") {
+            System.out.println("Empty");
+        } else {
+            System.out.println("Present");
+        }
         customerRepository.save(newCustomer);
         return "redirect:/display-customers";
     }
