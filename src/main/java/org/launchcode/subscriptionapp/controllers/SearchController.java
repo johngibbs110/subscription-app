@@ -32,6 +32,9 @@ public class SearchController {
         } else if (searchType.equals("Last Name")) {
             List<Customer> lastNameCustomers = customerRepository.findByLastName(searchTerm);
             model.addAttribute("customers", lastNameCustomers);
+        } else if (searchType.equals("State")) {
+            List<Customer> stateCustomers = customerRepository.findByState(searchTerm);
+            model.addAttribute("customers", stateCustomers);
         }
         model.addAttribute("title", "Search Customers");
         return "customers/search-customers";
