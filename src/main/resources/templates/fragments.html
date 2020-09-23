@@ -32,12 +32,12 @@
 <div th:fragment="form-fields">
    <div class="form-group form-row">
       <div class="col">
-         <label for="firstName">First Name:</label>
+         <label for="firstName">First Name*</label>
          <input type="text" th:field="*{firstName}" class="form-control" placeholder="Enter first name" id="firstName">
          <p class="error" th:errors="${customer.firstName}"></p>
       </div>
       <div class="col">
-         <label for="lastName">Last Name:</label>
+         <label for="lastName">Last Name*</label>
          <input type="text" th:field="*{lastName}" class="form-control" placeholder="Enter last name" id="lastName">
          <p class="error" th:errors="${customer.lastName}"></p>
       </div>
@@ -45,24 +45,24 @@
 
    <div class="form-group form-row">
       <div class="col">
-         <label for="street-address">Street Address Line 1:</label>
+         <label for="street-address">Street Address Line 1*</label>
          <input type="text" th:field="*{streetAddress}" class="form-control" placeholder="Enter address" id="street-address">
          <p class="error" th:errors="${customer.streetAddress}"></p>
       </div>
       <div class="col">
-         <label for="street-address-two">Street Address Line 2:</label>
+         <label for="street-address-two">Street Address Line 2</label>
          <input type="text" th:field="*{streetAddressTwo}" class="form-control" placeholder="Enter address" id="street-address-two">
       </div>
    </div>
 
    <div class="form-group form-row">
       <div class="col">
-         <label for="city">City:</label>
+         <label for="city">City*</label>
          <input type="text" th:field="*{city}" class="form-control" placeholder="Enter city" id="city">
          <p class="error" th:errors="${customer.city}"></p>
       </div>
       <div class="col">
-         <label for="state">State:</label>
+         <label for="state">State*</label>
          <select th:field="*{state}" id="state" class="form-control" required>
             <option value="">Select</option>
             <option value="AL">Alabama</option>
@@ -119,7 +119,7 @@
          </select>
       </div>
       <div class="col">
-         <label for="zip">Zip Code:</label>
+         <label for="zip">Zip Code*</label>
          <input type="text" th:field="*{zip}" class="form-control" placeholder="Enter zip code" id="zip">
          <p class="error" th:errors="${customer.zip}"></p>
       </div>
@@ -127,7 +127,7 @@
 
    <div class="form-group form-row">
       <div class="col">
-         <label for="email">Email Address:</label>
+         <label for="email">Email Address*</label>
          <input type="email" th:field="*{email}" class="form-control" placeholder="Enter email address" id="email">
          <p class="error" th:errors="${customer.email}"></p>
       </div>
@@ -135,12 +135,12 @@
 
    <div class="form-group form-row">
       <div class="col">
-         <label for="phone">Phone Number:</label>
+         <label for="phone">Phone Number*</label>
          <input type="text" th:field="*{phone}" class="form-control" placeholder="(XXX-XXX-XXXX)" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value="">
          <p class="error" th:errors="${customer.phone}"></p>
       </div>
       <div class="col">
-         <label>Subscription Length:</label><br>
+         <label>Subscription Length*</label><br>
          <input type="radio" id="three-month" th:field="*{subscriptionLength}" value="3" required>
          <label for="three-month">3</label><br>
          <input type="radio" id="six-month" th:field="*{subscriptionLength}" value="6" required>
