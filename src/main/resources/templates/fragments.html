@@ -141,12 +141,13 @@
       </div>
       <div class="col">
          <label>Subscription Length<span class="asterisk">*</span></label><br>
-         <input type="radio" id="three-month" th:field="*{subscriptionLength}" value="3" required>
+         <input type="radio" id="three-month" th:field="*{subscriptionLength}" value="3">
          <label for="three-month">3</label><br>
-         <input type="radio" id="six-month" th:field="*{subscriptionLength}" value="6" required>
+         <input type="radio" id="six-month" th:field="*{subscriptionLength}" value="6">
          <label for="six-month">6</label><br>
-         <input type="radio" id="twelve-month" th:field="*{subscriptionLength}" value="12" required>
+         <input type="radio" id="twelve-month" th:field="*{subscriptionLength}" value="12">
          <label for="twelve-month">12</label><br>
+         <p class="error" th:errors="${customer.subscriptionLength}"></p>
       </div>
    </div>
 

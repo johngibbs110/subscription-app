@@ -42,6 +42,7 @@ public class Customer {
     @NotBlank(message = "Please enter phone number.")
     private String phone;
 
+    @NotNull(message = "Please enter a subscription length.")
     private Integer subscriptionLength;
 
     public Customer(String firstName, String lastName, String streetAddress, String streetAddressTwo, String city, String state, String zip, String email, String phone, Integer subscriptionLength) {
