@@ -1,4 +1,4 @@
-package org.launchcode.subscriptionapp.data;
+package org.launchcode.subscriptionapp.models;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
