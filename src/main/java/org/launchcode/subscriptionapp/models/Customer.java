@@ -9,11 +9,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-public class Customer {
-
-    @Id
-    @GeneratedValue
-    private int id;
+public class Customer extends AbstractEntity {
 
     @NotBlank(message = "Please enter first name.")
     private String firstName;
@@ -59,14 +55,6 @@ public class Customer {
     }
 
     public Customer () {}
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getFirstName() {
         return firstName;

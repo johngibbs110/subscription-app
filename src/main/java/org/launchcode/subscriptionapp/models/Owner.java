@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class Owner {
+public class Owner extends AbstractEntity {
 
     @NotNull
     private String username;
